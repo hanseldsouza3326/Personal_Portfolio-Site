@@ -1,177 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hansel Joaquim D'souza | Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hansel Joaquim D'souza | IBM Certified Data Analyst </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    
+    <style>
+      /* ✨ Fade animation for project cards*/
+      .card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.6s ease;
+      }
 
-    <header class="hero">
-        <div class="container">
-            <h1 class="name">Hansel Joaquim D'souza</h1>
-            <p class="tagline">Highly Analytical Data Analyst | Python, R, Tableau, Power BI</p>
-            <div class="contact-links">
-                <a href="mailto:hanseldsouza3326@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
-                <a href="tel:+353894376547" class="contact-btn"><i class="fas fa-phone"></i> (+353) 894376547</a>
-                <a href="#" target="_blank" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn</a> 
-                <a href="https://public.tableau.com/app/profile/hansel.joaquim.d.souza/vizzes" target="_blank" class="contact-btn"><i class="fas fa-chart-bar"></i> Tableau Public</a>
-            </div>
-        </div>
+      .card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Default hover for all cards */
+      .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      /* 🌟 Neon hover replacement for Data Analyst Focus */
+      .card.glow:hover {
+        /* Bright shadow accenting a modern blue palette */
+        box-shadow:
+          0 0 10px rgba(0, 140, 186, 0.7),
+          0 0 25px rgba(0, 140, 186, 0.6),
+          0 0 40px rgba(0, 140, 186, 0.4);
+        transform: translateY(-12px) scale(1.05);
+        transition: all 0.4s ease-in-out;
+      }
+
+      /* Smooth image fade on hover */
+      .card img {
+        transition: opacity 0.4s ease;
+      }
+
+      .card.glow:hover img {
+        opacity: 0.85;
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">HD<span>.</span></div>
+            <div class="hamburger" id="hamburger">☰</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌙</button>
+        </nav>
     </header>
 
-    <main class="container">
-
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <p>
-                I am a highly analytical and detail-oriented **Data Analyst** with a strong background in data visualization, IT management, and database administration. I bring expertise in using tools such as **Tableau, Power BI, and SQL**, along with programming languages like **Python and R**, to provide insights that enhance business strategies. 
-                <br><br>
-                Backed by **3 years of experience** supporting critical systems in the banking sector and driving operational efficiency through data-driven decision-making, I hold a Master's in Data Analytics from the University of Galway. I am seeking to leverage my skills in a dynamic data environment in Ireland.
-            </p>
-        </section>
-
-        <section id="skills" class="section">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Languages & Databases</h3>
-                    <ul>
-                        <li>Python, R-Programming</li>
-                        <li>HTML/CSS</li>
-                        <li>MS-SQL, Oracle-SQL, SSMS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-pie"></i> Visualization & BI</h3>
-                    <ul>
-                        <li>Tableau, Power BI</li>
-                        <li>Talend, UML</li>
-                        <li>Google Sheets, Microsoft Excel/Word</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Domain & Ops</h3>
-                    <ul>
-                        <li>Database Administration (Oracle)</li>
-                        <li>IT Management / System Support</li>
-                        <li>Business Intelligence & Strategy</li>
-                        <li>Core Banking Systems</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section">
-            <h2 class="section-title">Professional Experience</h2>
-
-            <div class="job-card">
-                <h3>Information Technology Officer (IT Officer)</h3>
-                <p class="company">Bassein Catholic Co-Operative Bank Ltd | Dec 2021 - Aug 2024</p>
-                <ul>
-                    <li>**Data Visualization:** Visualized and analyzed data using tools like **Tableau and Power BI** to uncover insights that enhanced business strategies across multiple departments.</li>
-                    <li>**Database Administration:** Performed database logical backups (data pump/export/import), applied Oracle patch sets, and executed upgradation of database servers (11g to 19C).</li>
-                    <li>Managed end-to-end configuration and support for NEFT/RTGS Digital channels and Swift Applications (Total Messaging & Notiva).</li>
-                    <li>Created Oracle Linux system setup on a virtual environment using VMWare.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <h3>Assistance Coordinator</h3>
-                <p class="company">Mawdy Ireland Ltd | Sep 2025 - Present</p>
-                <ul>
-                    <li> At Mawdy Ireland, a trusted partner for leading insurers including FBD, RedClick, Zurich, Ornella, Ivernia, ARAG, Footprint, and more, I serve as a critical link between policyholders and emergency service providers. In my role as Assistance Coordinator, I ensure that every call is met with professionalism, urgency, and care thus delivering solutions when clients need them most.
-
-Key responsibilities:
-🔹 Managing high-pressure emergency calls with clarity and empathy
-🔹 Assisting policyholders through claims, service coordination, and policy inquiries
-🔹 Acting as a liaison between insurance providers, service partners, and customers to ensure swift and accurate service delivery
-🔹 Maintaining meticulous case records, ensuring full compliance with regulatory and internal guidelines
-🔹 Balancing exceptional customer experience with policy and procedural adherence
-</li>
-                </ul>
-        
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-            <h2 class="section-title">Featured Data Projects</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <h3>FAIRAI - Fair Churn Prediction</h3>
-                    <p>Developed a fair churn prediction system using Mixture of Experts (MOE) architecture on a real-world Irish financial dataset, focusing on model transparency.</p>
-                    <p class="tools">**Tools:** AI/ML, Python, Jupyter, Financial Data</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Walmart Retail Sales Analysis</h3>
-                    <p>Analyzed sales performance data to identify peak periods and popular products, providing recommendations to enhance inventory management and marketing strategies.</p>
-                    <p class="tools">**Tools:** Tableau & Power BI, MS-SQL</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Arsenal FC Invincible Season Dashboard</h3>
-                    <p>A full graphical Tableau dashboard describing Arsenal FC's unbeaten 2003/04 campaign in a detailed storytelling format to engross the viewer.</p>
-                    <p class="tools">**Tools:** Tableau Public, Storytelling</p>
-                </div>
-                
-            </div>
-            <p class="note">View all projects and vizzes on my <a href="https://public.tableau.com/app/profile/hansel.joaquim.d.souza/vizzes" target="_blank">Tableau Public profile</a>.</p>
-        </section>
-
-        <section id="education" class="section">
-            <h2 class="section-title">Education</h2>
-            <div class="education-card">
-                <h3>Master's in Computer Science (MSc) - Data Analytics</h3>
-                <p class="institution">University of Galway | 2024-2025</p>
-            </div>
-            <div class="education-card">
-                <h3>Master's in Information Technology (MSc IT)</h3>
-                <p class="institution">University of Mumbai (St. Gonsalo Garcia College) | 2020-2022</p>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="currentYear"></span> Hansel Joaquim D'souza. Data Analyst.</p>
+    <section class="hero" id="hero">
+        <div class="overlay">
+            <h1 data-aos="zoom-in">Hi 👋 I'm <span>Hansel J D'souza</span></h1>
+            <p data-aos="fade-up">Data Analysis | Business Intelligence | Database Administration</p>
+            <div class="scroll-down" data-aos="fade-up">⬇ Scroll</div>
         </div>
-    </footer>
-    
+    </section>
+
+    <section class="about" id="about" data-aos="fade-right">
+        <h2>About Me</h2>
+        <p>
+            I am a highly **analytical and detail-oriented Data Analyst** with a strong background in data
+            visualization, IT management, and database administration. My expertise lies in leveraging tools like
+            **Tableau, Power BI, and SQL**, alongside programming languages like **Python and R**, to deliver actionable insights that enhance business strategies.
+        </p>
+        <p>
+            Backed by **3 years of experience** supporting critical systems in the banking sector, I bring a strong foundation in database administration, data science, and business intelligence. I have completed my Master's in Data Analytics at the **University of Galway** and am currently seeking to leverage my skills in a dynamic data environment in Ireland.
+        </p>
+    </section>
+
+    <section class="education" id="education" data-aos="fade-up">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h3>🎓 Master's in Computer Science (MSc) - Data Analytics</h3>
+                    <p><b>University of Galway</b> | 2024 – 2025</p>
+                    <p>
+                        Specialized in advanced analytics, statistical modeling, and AI-driven problem solving.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h3>🎓 Master's in Information Technology (MSc IT)</h3>
+                    <p><b>University of Mumbai</b> | 2020 – 2022</p>
+                    <p><b>Grade:</b> CGPA-9.21 (78.46%)</p>
+                    <p>
+                        Built a strong foundation in database administration, IT support, and programming.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h3>📚 IBM Advanced Diploma in Data Science & Analytics</h3>
+                    <p><b>Certification Details</b> | 2021 – 2023</p>
+                    <p>
+                        <a href="https://www.credly.com/users/hansel-joaquim-d-souza" target="_blank">View Credly Certification</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="internships" id="experience" data-aos="fade-left">
+        <h2>Professional Experience</h2>
+        
+        <div class="intern-card" data-aos="zoom-in">
+            <h3>Information Technology Officer (IT Officer)</h3>
+            <p><b>Bassein Catholic Co-Operative Bank Ltd</b> | Dec 2021 - Aug 2024</p>
+            <ul>
+                <li>Visualized and analyzed data using **Tableau and Power BI**, employing various charts to uncover insights that enhanced business strategies.</li>
+                <li>Created Oracle Linux system setup (VMWare) and established Oracle database 19C with production prerequisites; applied Oracle patch sets and performed performance tuning.</li>
+                <li>Managed end-to-end configuration and support for NEFT/RTGS Digital channels and Swift Applications (Total Messaging & Notiva).</li>
+            </ul>
+        </div>
+
+        <div class="intern-card" data-aos="zoom-in">
+            <h3>Assistance Coordinator</h3>
+            <p><b>Mawdy Ireland Ltd</b> | Sep 2025 - Present</p>
+        </div>
+        
+    </section>
+
+
+    <section class="projects" id="projects">
+        <h2 data-aos="fade-up">Projects</h2>
+        <div class="grid">
+
+            <div class="card glow" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1543286386-2e659306ebc5?auto=format&fit=crop&w=800&q=60" alt="AI Prediction Project">
+                <h3>📈 FAIRAI – Fair Churn Prediction</h3>
+                <p>
+                    Developed a fair churn prediction system using **Mixture of Experts (MOE) architecture** on a real-world Irish financial dataset, ensuring fairness and transparency in AI governance.
+                </p>
+            </div>
+
+            <div class="card glow" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1542759567-0c67329b35b6?auto=format&fit=crop&w=800&q=60" alt="Mobile Game Analysis">
+                <h3>🎮 Mobile Game Trends (2008-2019)</h3>
+                <p>
+                    Logically **merged data from 9 tables using MS-SQL** and developed executive graphical analysis of mobile game trends using **Tableau and Python** to identify marketing strategies.
+                </p>
+            </div>
+
+            <div class="card glow" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1556742111-a301076ee2bb?auto=format&fit=crop&w=800&q=60" alt="Retail Sales Analysis">
+                <h3>🛒 Walmart Retail Sales Analysis</h3>
+                <p>
+                    Analyzed sales performance data to identify peak periods and popular products, ultimately enhancing inventory management and marketing strategies using **Tableau & Power BI**.
+                </p>
+            </div>
+
+            <div class="card glow" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1579952363873-27f3bba1d860?auto=format&fit=crop&w=800&q=60" alt="Football Analytics">
+                <h3>⚽ Arsenal FC Invincible Season Dashboard</h3>
+                <p>
+                    Full graphical **Tableau dashboard** describing Arsenal FC's unbeaten campaign (2003/04) in a detailed storytelling format to engross the viewer in the historic achievement.
+                </p>
+            </div>
+
+            <div class="card glow" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=60" alt="Hospital App">
+                <h3>🏥 BookMyCare (Android App)</h3>
+                <p>
+                    Developed an integrated Android application providing real-time information on nearby hospitals, bed availability, and doctor schedules, using **Android Studio and MySQL** as the backend.
+                </p>
+            </div>
+
+            <div class="card glow" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a06d?auto=format&fit=crop&w=800&q=60" alt="Manufacturing">
+                <h3>🏭 Mercedes-Benz Greener Manufacturing</h3>
+                <p>
+                    Optimized testing speed on the bench by implementing complex algorithmic approaches, contributing to a decrease in CO2 emissions by vehicles. Created on **Anaconda (Jupyter), Tableau & Excel**.
+                </p>
+            </div>
+            
+        </div>
+        <p class="note" data-aos="fade-up">View all vizzes and data stories on my <a href="https://public.tableau.com/app/profile/hansel.joaquim.d.souza/vizzes" target="_blank">Tableau Public profile</a>.</p>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 data-aos="fade-up">Skills</h2>
+        <div class="skills-grid">
+            <div><i class="fab fa-python fa-3x"></i><p>Python</p></div>
+            <div><i class="fas fa-chart-line fa-3x"></i><p>R-Programming</p></div>
+            <div><i class="fas fa-database fa-3x"></i><p>Oracle-SQL</p></div>
+            <div><i class="fas fa-table fa-3x"></i><p>Tableau</p></div>
+            <div><i class="fas fa-chart-bar fa-3x"></i><p>Power BI</p></div>
+            <div><i class="fas fa-file-excel fa-3x"></i><p>MS Excel</p></div>
+            <div><i class="fab fa-html5 fa-3x"></i><p>HTML/CSS</p></div>
+            <div><i class="fas fa-code-branch fa-3x"></i><p>Git/GitHub</p></div>
+            <div><i class="fas fa-server fa-3x"></i><p>DB Admin</p></div>
+        </div>
+        <p class="note" data-aos="fade-up">Also proficient in MS-SQL, SSMS, Talend, UML, and Google Sheets.</p>
+    </section>
+
+    <section class="activities" id="activities" data-aos="fade-up">
+        <h2>Extracurricular Activities</h2>
+        <div class="activities-grid">
+            <div class="activity-card" data-aos="zoom-in">
+                <h3>🏆 Team Sports Captain</h3>
+                <p>Team Captain in the Inter-class Rink football tournament at the University level (Mumbai).</p>
+            </div>
+            <div class="activity-card" data-aos="zoom-in">
+                <h3>💪 Tug-of-War Champion</h3>
+                <p>Winning 3 times in succession in the Tug-of-War tournament at the University level (Mumbai).</p>
+            </div>
+            <div class="activity-card" data-aos="zoom-in">
+                <h3>🎤 Event Host</h3>
+                <p>Host for local football and Esports Tournaments at Vartak Engineering College, Vasai Mumbai.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="download" data-aos="fade-up">
+        <h2>Want to Know More?</h2>
+        <a href="Hansel_Dsouza_CV.pdf" download class="btn" target="_blank" rel="noopener noreferrer">📄 Download My CV</a>
+    </section>
+
+    <section class="contact" id="contact" data-aos="zoom-in">
+        <h2>Get in Touch</h2>
+        <div class="links">
+            <a href="mailto:hanseldsouza3326@gmail.com">📧 Email</a>
+            <a href="tel:+353894376547">📞 Call (+353) 894376547</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">🔗 LinkedIn (Placeholder)</a>
+            <a href="https://public.tableau.com/app/profile/hansel.joaquim.d.souza/vizzes" target="_blank" rel="noopener noreferrer">📊 Tableau Public</a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+      AOS.init({ duration: 1000, once: true });
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-
-    // Dark/Light Mode
-    const toggleBtn = document.getElementById("theme-toggle");
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    });
-
-    // Hamburger
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    // Fade-in effect when visible
-    const cards = document.querySelectorAll(".card");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
+      // Dark/Light Mode
+      const toggleBtn = document.getElementById("theme-toggle");
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
       });
-    }, { threshold: 0.2 });
-    cards.forEach(card => observer.observe(card));
-  </script>
+
+      // Hamburger
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Fade-in effect when visible
+      const cards = document.querySelectorAll(".card");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      }, { threshold: 0.2 });
+      cards.forEach(card => observer.observe(card));
     </script>
 </body>
 </html>
